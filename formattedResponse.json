@@ -1,0 +1,302 @@
+[
+    {
+      title: 'Hold My Liquor',
+      popularity: 66,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9'
+    },
+    {
+      title: 'Broadway Girls (feat. Morgan Wallen)',
+      popularity: 72,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2732f05bd9ab6bb020c57a871e2'
+    },
+    {
+      title: 'Churchill Downs (feat. Drake)',
+      popularity: 82,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2738e55edb69ca44a25b52b17bb'
+    },
+    {
+      title: 'First Class',
+      popularity: 92,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2730fbbde391655703a7c8cdc79'
+    },
+    {
+      title: 'WAIT FOR U (feat. Drake & Tems)',
+      popularity: 91,
+      artists: [ [Object], [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27386badd635b69aea887862214'
+    },
+    {
+      title: 'N.Y. State of Mind',
+      popularity: 71,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273045fc920ecf4f8094888ec26'
+    },
+    {
+      title: 'Cash In Cash Out',
+      popularity: 85,
+      artists: [ [Object], [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2738f0df54fd6043164d7c07ae3'
+    },
+    {
+      title: 'SG (with Ozuna, Megan Thee Stallion & LISA of BLACKPINK)',
+      popularity: 78,
+      artists: [ [Object], [Object], [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27354d075797911e02360beb3e7'
+    },
+    {
+      title: 'PROVENZA',
+      popularity: 96,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273e70c454b8989f09d1e11ea92'
+    },
+    {
+      title: 'D.M.B.',
+      popularity: 75,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27334a1040c25a7ff7fca5135f3'
+    },
+    {
+      title: 'Vegas (From the Original Motion Picture Soundtrack ELVIS)',
+      popularity: 90,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27329e2914af6e83df7e963d365'
+    },
+    {
+      title: 'Blood On The Leaves',
+      popularity: 67,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9'
+    },
+    {
+      title: 'New Slaves',
+      popularity: 65,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9'
+    },
+    {
+      title: 'N95',
+      popularity: 80,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: "Johnny P's Caddy",
+      popularity: 66,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f18e14251caccbf310cbe281'
+    },
+    {
+      title: 'love nwantiti (ah ah ah)',
+      popularity: 86,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273405fdad252857e01dbced96a'
+    },
+    {
+      title: 'Monastery',
+      popularity: 80,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273b375641ac437f2cca823f732'
+    },
+    {
+      title: 'Tusa',
+      popularity: 79,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273ddd3154c58e15a8bdb63bbcc'
+    },
+    {
+      title: '4th Dimension',
+      popularity: 68,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82'
+    },
+    {
+      title: 'United In Grief',
+      popularity: 75,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: 'TO THE MOON',
+      popularity: 81,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2739af8418ffb638b3306a07714'
+    },
+    {
+      title: 'Feel The Love',
+      popularity: 63,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82'
+    },
+    {
+      title: 'City of Gods',
+      popularity: 74,
+      artists: [ [Object], [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2739cd828e243b08cb70b15d047'
+    },
+    {
+      title: 'The Heart Part 5',
+      popularity: 75,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27389877ffdd584dc9b7168044b'
+    },
+    {
+      title: 'Eazy',
+      popularity: 73,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2739e6f57b6b43d748ce80c5122'
+    },
+    {
+      title: 'Rich Spirit',
+      popularity: 75,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: "ADDICTIONS (FEAT. Tre' Amani)",
+      popularity: 69,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2734b8f2487967251bae2efbc27'
+    },
+    {
+      title: 'Ghost Town',
+      popularity: 77,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2730cd942c1a864afa4e92d04f2'
+    },
+    {
+      title: 'Savior',
+      popularity: 72,
+      artists: [ [Object], [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: 'I Like You (A Happier Song) (with Doja Cat)',
+      popularity: 92,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27334362676667a4322838ccc97'
+    },
+    {
+      title: 'Surround Sound (feat. 21 Savage & Baby Tate)',
+      popularity: 77,
+      artists: [ [Object], [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2737cdc9049c803f7a5db9ba399'
+    },
+    {
+      title: 'Jesus Lord',
+      popularity: 61,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273cad190f1a73c024e5a40dddd'
+    },
+    {
+      title: 'Calling My Name',
+      popularity: 82,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2738dc0d801766a5aa6a33cbe37'
+    },
+    {
+      title: 'Worldwide Steppers',
+      popularity: 71,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: 'Trust',
+      popularity: 77,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273bf3e522cd3fed64ae064095f'
+    },
+    {
+      title: 'Black Skinhead',
+      popularity: 75,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2731dacfbc31cc873d132958af9'
+    },
+    {
+      title: 'Fire',
+      popularity: 60,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82'
+    },
+    {
+      title: 'issues',
+      popularity: 55,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2733bcf586e8df6f8ef4a36ca3c'
+    },
+    {
+      title: 'Freeee (Ghost Town Pt. 2)',
+      popularity: 59,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82'
+    },
+    {
+      title: 'Fair Trade (with Travis Scott)',
+      popularity: 84,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273cd945b4e3de57edd28481a3f'
+    },
+    {
+      title: 'Cooped Up (with Roddy Ricch)',
+      popularity: 64,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2734763d211032c82561299232b'
+    },
+    {
+      title: 'GO (feat. Juice WRLD)',
+      popularity: 75,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273891f0552bed344dc2bfe322f'
+    },
+    {
+      title: 'Father Time (feat. Sampha)',
+      popularity: 74,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: 'Me Porto Bonito',
+      popularity: 100,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72'
+    },
+    {
+      title: 'N95',
+      popularity: 86,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2732e02117d76426a08ac7c174f'
+    },
+    {
+      title: 'Silent Hill',
+      popularity: 74,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: 'We Cry Together',
+      popularity: 71,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f'
+    },
+    {
+      title: 'Ultralight Beam',
+      popularity: 71,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2732a7db835b912dc5014bd37f4'
+    },
+    {
+      title: 'Heart Ache',
+      popularity: 38,
+      artists: [ [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b2738f910ae24fa71156a1594cae'
+    },
+    {
+      title: 'Kids See Ghosts',
+      popularity: 60,
+      artists: [ [Object], [Object] ],
+      album: 'https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82'
+    }
+  ]
