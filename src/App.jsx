@@ -24,7 +24,7 @@ function App() {
     url += "&response_type=code";
     url += "&redirect_uri=" + encodeURI(redirect_uri);
     url += "&show_dialog=true";
-    url += "&scope=user-read-private"
+    url += "&scope=user-top-read"
     window.location.href = url;
   
   }
@@ -90,26 +90,26 @@ function App() {
       .catch(err => console.log('error in fetch: ', err))
   }
 
-  function handleAuthorizationResponse(){
-    if (this.status == 200){
-      let data = JSON.parse(this.responseText);
-      console.log('data in handleAuthResponse is: ', data);
+  // function handleAuthorizationResponse(){
+  //   if (this.status == 200){
+  //     let data = JSON.parse(this.responseText);
+  //     console.log('data in handleAuthResponse is: ', data);
     
-      if(data.access_token !== undefined){
-        let access_token_request = data.access_token;
-        console.log('access token: ', access_token)
-        setAccessToken((access_token) => access_token = access_token_request)
-      }
-      if (data.refresh_token !== undefined){
-        let refresh_token_request = data.refresh_token;
-        console.log('refresh token: ', refresh_token)
-        setRefreshToken((refresh_token) => refresh_token_request)
-      }
-    }
-    else{
-      console.log(this.responseText);
-    }
-  }
+  //     if(data.access_token !== undefined){
+  //       let access_token_request = data.access_token;
+  //       console.log('access token: ', access_token)
+  //       setAccessToken((access_token) => access_token = access_token_request)
+  //     }
+  //     if (data.refresh_token !== undefined){
+  //       let refresh_token_request = data.refresh_token;
+  //       console.log('refresh token: ', refresh_token)
+  //       setRefreshToken((refresh_token) => refresh_token_request)
+  //     }
+  //   }
+  //   else{
+  //     console.log(this.responseText);
+  //   }
+  // }
 
   return (
     <div className="App">
