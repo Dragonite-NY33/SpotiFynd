@@ -3,6 +3,11 @@ body {
   margin: 0;
 }
 
+.landing {
+  background-color: rgb(182, 237, 182);
+  height: 100vh;
+}
+
 /* .App {
   text-align: center;
 }

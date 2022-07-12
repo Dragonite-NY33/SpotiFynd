@@ -13,7 +13,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 function Landing() {
   return (
-    <div>
+    <div class='landing'>
       <Box color='rgb(27,215,96)' bg='rgb(39,42,54)' py='5'>
         <Center>
           <Flex direction={'column'}>
@@ -23,7 +23,13 @@ function Landing() {
       </Box>
       <Center>
         <RouterLink to='Playgame'>
-          <Button px='12' py='10' mt='260' borderColor='red'>
+          <Button
+            px='12'
+            py='10'
+            mt='260'
+            // bg='rgb(39,42,54)'
+            // color='rgb(27,215,96)'
+          >
             Start Game
           </Button>
         </RouterLink>

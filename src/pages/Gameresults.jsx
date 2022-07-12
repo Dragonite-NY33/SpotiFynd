@@ -5,6 +5,9 @@ function Gameresults() {
     <Box bg='#222326' h={'100vh'}>
       <Flex direction={'column'} alignItems='center'>
         <Heading color='#2EB953'>SpotiFynd</Heading>
+        <Heading color='#2EB953' mt={50}>
+          LeaderBoard
+        </Heading>
       </Flex>
 
       <Flex direction={'column'} alignItems='center' mt='100'></Flex>
