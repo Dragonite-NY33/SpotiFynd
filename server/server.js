@@ -6,6 +6,7 @@ const client_secret = '0e0b57569f2c44aba10fbfc5149db042';
 const redirect_uri = 'http://localhost:3000/auth/spotify/callback';
 import cors from 'cors';
 import spotifyController from './controllers/spotifyController.js';
+import leaderboardController from './controllers/leaderboardController.js'
 
 //middleware
 app.use(express.json());
@@ -42,8 +43,19 @@ app.get(
   }
 );
 
-// request to unknown route
-app.use((req, res) => res.statusMessage(404).send('unknown route'));
+// endpoint to get save userScore
+app.post('/api/storeUserScore', leaderboardController.storeUserScore, (req, res, next) => {
+    res.send(res.locals.userScore);
+})
+
+// endpoint to get top 10 on the leaderboard
+app.get('/api/leaderboard', leaderboardController.getTopTenScores, (req, res, next) => {
+    res.send(res.locals.topTenScores);
+})
+
+
+// request to unknown route 
+app.use((req,res) => res.statusMessage(404).send('unknown route'));
 
 // global error handler
 app.use((err, req, res, next) => {
