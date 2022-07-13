@@ -15,7 +15,6 @@ spotifyController.getUserSongs = (req, res, next) => {
     .then((data) => data.json())
     .then((parsedData) => {
       console.log('Received data back from the Spotify API');
-      console.log(parsedData);
       parsedData.items.forEach(function (el) {
         const songInfo = {};
         songInfo.title = el.name;
@@ -23,10 +22,11 @@ spotifyController.getUserSongs = (req, res, next) => {
         songInfo.artists = el.artists.map((eachArtist) => {
           return eachArtist.name;
         });
+        songInfo.previewUrl = el.preview_url;
         songInfo.album = el.album.images[0].url;
         userSongs.push(songInfo);
       });
-
+      userSongs.sort(() => Math.random() - 0.5);
       console.log('user songs within the getUserSongs request', userSongs);
       res.locals.userSongs = userSongs;
       return next();
@@ -60,9 +60,11 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
         songInfo.artists = el.track.album.artists.map((eachArtist) => {
           return eachArtist.name;
         });
+        songInfo.previewUrl = el.track.preview_url;
         songInfo.album = el.track.album.images[0].url;
         playlistSongs.push(songInfo);
       });
+      playlistSongs.sort(() => Math.random() - 0.5);
       console.log(
         'user songs within the getPlaylistSongs request',
         playlistSongs
@@ -77,7 +79,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
 };
 
 spotifyController.getMixedSongs = (req, res, next) => {
-  console.log('came into getMixedSongs');
+  console.log('recieved mixedSongs request');
   try {
     const userSongs = res.locals.userSongs;
     const playlistSongs = res.locals.playlistSongs;
