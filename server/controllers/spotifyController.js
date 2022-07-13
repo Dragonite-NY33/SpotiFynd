@@ -9,7 +9,7 @@ spotifyController.getUserSongs = (req, res, next) => {
     headers: {
       'Content-Type': 'application/json',
       Authorization:
-        'Bearer BQBJW7sXR62oWxgBltpahab_7fZf2rJ4GVoZeHGEybg9RSCtXztM9vkbR67fiwF38-0YM9u7ttMYIhgj0FZMYNQiAIcyAZnV_Tbe0GeHVPKx39yJZAJCNFQVlqCqO0vBwF8QF0g0gLNRydW1_txiVuIytP2j47720K4nSJbkhQWnlnhtTHa-YiFnQ710Bg',
+        'Bearer BQDjqkEw7OfxH_7gKgPLQ8l2As3jNfIFkzM04vBU8NYVkgZGdcbWaP7vc9V9YSv8DCZEzDwstIY5cSqdq9fIV_uZ3eSNHusm2Wkm52rCbZSZUGRquAkguj_7oDJEwLSKVFA5KCMAzOD6lSXiG6wouKmcSgkOChsEUEllE9HjhxrCgl0NhlDAbf32iQ',
     },
   })
     .then((data) => data.json())
@@ -46,7 +46,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization:
-          'Bearer BQBJW7sXR62oWxgBltpahab_7fZf2rJ4GVoZeHGEybg9RSCtXztM9vkbR67fiwF38-0YM9u7ttMYIhgj0FZMYNQiAIcyAZnV_Tbe0GeHVPKx39yJZAJCNFQVlqCqO0vBwF8QF0g0gLNRydW1_txiVuIytP2j47720K4nSJbkhQWnlnhtTHa-YiFnQ710Bg',
+          'Bearer BQDjqkEw7OfxH_7gKgPLQ8l2As3jNfIFkzM04vBU8NYVkgZGdcbWaP7vc9V9YSv8DCZEzDwstIY5cSqdq9fIV_uZ3eSNHusm2Wkm52rCbZSZUGRquAkguj_7oDJEwLSKVFA5KCMAzOD6lSXiG6wouKmcSgkOChsEUEllE9HjhxrCgl0NhlDAbf32iQ',
       },
     }
   )

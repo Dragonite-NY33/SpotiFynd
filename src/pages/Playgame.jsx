@@ -15,6 +15,7 @@ import Vsbox from '../Components/Vsbox';
 import Navbar from '../Components/Navbar';
 import Flipcard from '../Components/Flipcard';
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Playgame() {
   const [score, setScore] = useState(0);
