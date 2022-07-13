@@ -8,7 +8,7 @@ spotifyController.getUserSongs = (req, res, next) => {
     fetch(`https://api.spotify.com/v1/me/top/tracks?limit=50`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer BQBJXPZaWsDW9pMi1ZRPT9WSZoxNzIrwqZoqKSFpjaJnuAfG7-F86lwWmubphneAfCsfwfKVgaKF2B81UUvJS04kXPEgmeEjs86ccMrdrvPPjpEE-r1W1ImaBsw-MEJQ-WC2XyMJJsCtCuLCok2qz88zid26O1JqNxD1BEiheWVx01zzRd7iU27RHQ'
+            'Authorization': 'Bearer BQCqjUilU9N2ap_gcsZbq7JsM04Zfx1WWrLu1mTlkpP-43B5XMc--zkIeNeaA_zLNA6yJl47URisVl_gDR8BwnXtfLrb0DOylrU8HAfdwzwt-M90VVbIKw4YPS4LI6XKhOWwgKXOb9IMWrfbBsnzttvxPiYJ4xTTz0xGEH0hIyc-ZznIQu6G8DGmIfWT7Q'
         }
     })
     .then((data) => data.json())
@@ -42,7 +42,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
     fetch(`https://api.spotify.com/v1/playlists/37i9dQZEVXbLRQDuF5jeBp/tracks?limit=100`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer BQBJXPZaWsDW9pMi1ZRPT9WSZoxNzIrwqZoqKSFpjaJnuAfG7-F86lwWmubphneAfCsfwfKVgaKF2B81UUvJS04kXPEgmeEjs86ccMrdrvPPjpEE-r1W1ImaBsw-MEJQ-WC2XyMJJsCtCuLCok2qz88zid26O1JqNxD1BEiheWVx01zzRd7iU27RHQ',
+            'Authorization': 'Bearer BQCqjUilU9N2ap_gcsZbq7JsM04Zfx1WWrLu1mTlkpP-43B5XMc--zkIeNeaA_zLNA6yJl47URisVl_gDR8BwnXtfLrb0DOylrU8HAfdwzwt-M90VVbIKw4YPS4LI6XKhOWwgKXOb9IMWrfbBsnzttvxPiYJ4xTTz0xGEH0hIyc-ZznIQu6G8DGmIfWT7Q'
         }
     })
     .then((data) => data.json())
@@ -55,7 +55,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
                 songInfo.artists = el.track.album.artists.map(eachArtist => {
                     return eachArtist.name;
                 });
-                songInfo.previewUrl = el.track.review_url;
+                songInfo.previewUrl = el.track.preview_url;
                 songInfo.album = el.track.album.images[0].url;
                 playlistSongs.push(songInfo);
         })
