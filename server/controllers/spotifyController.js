@@ -8,7 +8,7 @@ spotifyController.getUserSongs = (req, res, next) => {
     fetch(`https://api.spotify.com/v1/me/top/tracks?limit=50`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer BQBPePxNy9-qEFeo26OgPjMJbn2Vl4Gw0RqTT7bID8uoF1o_VN7auc3doPTkLl-8-oGwlFmgPhIaPr63QowNE8rQpijepznC0-Ftj9Boucl_y8X1vCH6yR7gsUoYIjRfjB19qJwU5LoJGCz7eEBD_Wx1pumyGYjNhy3Cv5P8dTVWklPyCvnMEnY-ol5ckw',
+            'Authorization': 'Bearer BQBJXPZaWsDW9pMi1ZRPT9WSZoxNzIrwqZoqKSFpjaJnuAfG7-F86lwWmubphneAfCsfwfKVgaKF2B81UUvJS04kXPEgmeEjs86ccMrdrvPPjpEE-r1W1ImaBsw-MEJQ-WC2XyMJJsCtCuLCok2qz88zid26O1JqNxD1BEiheWVx01zzRd7iU27RHQ'
         }
     })
     .then((data) => data.json())
@@ -21,10 +21,11 @@ spotifyController.getUserSongs = (req, res, next) => {
                 songInfo.artists = el.artists.map(eachArtist => {
                     return eachArtist.name;
                 });;
+                songInfo.previewUrl = el.preview_url;
                 songInfo.album = el.album.images[0].url;
                 userSongs.push(songInfo);
         })
-
+        userSongs.sort(() => Math.random() - 0.5);
         console.log('user songs within the getUserSongs request', userSongs);
         res.locals.userSongs = userSongs;
         return next();
@@ -41,7 +42,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
     fetch(`https://api.spotify.com/v1/playlists/37i9dQZEVXbLRQDuF5jeBp/tracks?limit=100`, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer BQBPePxNy9-qEFeo26OgPjMJbn2Vl4Gw0RqTT7bID8uoF1o_VN7auc3doPTkLl-8-oGwlFmgPhIaPr63QowNE8rQpijepznC0-Ftj9Boucl_y8X1vCH6yR7gsUoYIjRfjB19qJwU5LoJGCz7eEBD_Wx1pumyGYjNhy3Cv5P8dTVWklPyCvnMEnY-ol5ckw',
+            'Authorization': 'Bearer BQBJXPZaWsDW9pMi1ZRPT9WSZoxNzIrwqZoqKSFpjaJnuAfG7-F86lwWmubphneAfCsfwfKVgaKF2B81UUvJS04kXPEgmeEjs86ccMrdrvPPjpEE-r1W1ImaBsw-MEJQ-WC2XyMJJsCtCuLCok2qz88zid26O1JqNxD1BEiheWVx01zzRd7iU27RHQ',
         }
     })
     .then((data) => data.json())
@@ -54,9 +55,11 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
                 songInfo.artists = el.track.album.artists.map(eachArtist => {
                     return eachArtist.name;
                 });
+                songInfo.previewUrl = el.track.review_url;
                 songInfo.album = el.track.album.images[0].url;
                 playlistSongs.push(songInfo);
         })
+        playlistSongs.sort(() => Math.random() - 0.5);
         console.log('user songs within the getPlaylistSongs request', playlistSongs);
         res.locals.playlistSongs = playlistSongs;
         next();
@@ -68,7 +71,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
 }
 
 spotifyController.getMixedSongs = (req, res, next) => {
-    console.log('came into getMixedSongs');
+    console.log('recieved mixedSongs request');
     try {
         const userSongs = res.locals.userSongs;
         const playlistSongs = res.locals.playlistSongs;
