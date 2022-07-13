@@ -17,17 +17,17 @@ const MONGO_URI = 'mongodb+srv://spotiFynd:cswcS16Z8664lL3l@cluster0.jav5ed0.mon
 mongoose.connect(MONGO_URI);
 
 // request to get user's top 50 songs
-app.get('/userSongs', spotifyController.getUserSongs,(req, res, next) => {
+app.get('/userSongs:token', spotifyController.getUserSongs,(req, res, next) => {
     res.send(res.locals.userSongs)
 })
 
 // endpoint to get top 50 spotify songs
-app.get('/playlistSongs', spotifyController.getPlaylistSongs,(req, res, next) => {
+app.get('/playlistSongs:token', spotifyController.getPlaylistSongs,(req, res, next) => {
     res.send(res.locals.playlistSongs)
 })
 
 // endpoint to get mix of user songs and top 50 spotify songs
-app.get('/mixedSongs', spotifyController.getUserSongs, spotifyController.getPlaylistSongs, spotifyController.getMixedSongs, (req, res, next) => {
+app.get('/mixedSongs:token', spotifyController.getUserSongs, spotifyController.getPlaylistSongs, spotifyController.getMixedSongs, (req, res, next) => {
     res.send(res.locals.mixedSongs);
 })
 
