@@ -12,11 +12,12 @@ export default defineConfig({
     },
   },
   // proxy: {
-  //   '/userSongs': 'https://localhost:8000',
-  //   '/playlistSongs': 'https://localhost:8000',
-  //   '/mixedSongs': 'https://localhost:8000'
+  //   '/**': 'https://localhost:8080',
+  //   '/userSongs': 'https://localhost:8080',
+  //   '/playlistSongs': 'https://localhost:8080',
+  //   '/mixedSongs': 'https://localhost:8080'
   //   '/api': {
-  //     target: 'https://localhost:8000',
+  //     target: 'https://localhost:8080',
   //     changeOrigin: true,
   //     secure: false,
   //     ws: true,

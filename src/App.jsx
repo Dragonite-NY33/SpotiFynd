@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import Box from '@mui/material/Box';
 import { Container, Box, Flex, Center, Heading } from '@chakra-ui/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

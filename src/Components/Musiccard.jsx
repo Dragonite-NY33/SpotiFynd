@@ -107,7 +107,7 @@ function Musiccard(props) {
           {props.desc}
         </Text>
       </Box>
-      <Box className='card__face card__face--back'>Back</Box>
+      <Box className='card__face card__face--back'>{props.popularity}</Box>
     </Box>
   );
 }
