@@ -15,16 +15,17 @@ import Vsbox from '../Components/Vsbox';
 import Navbar from '../Components/Navbar';
 import Flipcard from '../Components/Flipcard';
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Playgame() {
   const [score, setScore] = useState(0);
 
   const [songList, setSongList] = useState([]);
-  const [songOne, setSongOne] = useState({});
-  const [songTwo, setSongTwo] = useState({});
+  // const [songOne, setSongOne] = useState({});
+  // const [songTwo, setSongTwo] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:8080/userSongs')
+    fetch('/api/userSongs')
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -32,11 +33,37 @@ function Playgame() {
       });
   }, []);
 
-  const arrHelperFunc = () => {
+  const arrHelperFunc = (event) => {
+    console.log(event.target.innerText);
+    if (
+      (event.target.innerText === 'Higher') &
+      (songList[0].popularity < songList[1].popularity)
+    ) {
+      let tempScore = score + 1;
+      setScore(tempScore);
+    }
+
+    if (
+      (event.target.innerText === 'Lower') &
+      (songList[0].popularity > songList[1].popularity)
+    ) {
+      let tempScore = score + 1;
+      setScore(tempScore);
+    }
+
     let tempList = [...songList];
     tempList.shift();
     console.log(tempList);
-    setSongList(tempList);
+
+    if (tempList.length > 44) {
+      setSongList(tempList);
+    } else {
+      alert('Game OveR');
+      let userInit = prompt(
+        `You have a score of ${score}. Please enter initials:`
+      );
+      window.location.assign('http://localhost:3000/gameresults');
+    }
   };
 
   console.log(songList[0]);
