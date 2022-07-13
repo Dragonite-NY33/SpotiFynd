@@ -12,20 +12,6 @@ import {
 } from '@chakra-ui/react';
 
 function LeaderBoard(props) {
-  // props.players = [
-  //   { player: 'player1', score: 35 },
-  //   { player: 'player2', score: 29 },
-  //   { player: 'player3', score: 46 },
-  // ];
-  // const players = [];
-  // for (let i = 0; i < props.players.length; i++) {
-  //   players.push(
-  //     <Tr>
-  //       <Td>{props.players[i].player}</Td>
-  //       <Td isNumeric>{props.players[i].score}</Td>
-  //     </Tr>
-  //   );
-  // }
   const playerss = [
     { player: 'player1', score: 35 },
     { player: 'player2', score: 29 },
@@ -52,7 +38,7 @@ function LeaderBoard(props) {
       );
     }
   }
-  // players.sort((a, b) => a.score - b.score);
+  players.sort((a, b) => a.score - b.score);
 
   return (
     <TableContainer
@@ -73,27 +59,10 @@ function LeaderBoard(props) {
           </Tr>
         </Thead>
         <Tbody>
-          {/* Array of players - name + score */}
           {players}
           {/* <Tr>
             <Td>{props.player}</Td>
             <Td isNumeric>{props.score}</Td>
-          </Tr> */}
-          {/* <Tr>
-            <Td>player2</Td>
-            <Td isNumeric>30</Td>
-          </Tr>
-          <Tr>
-            <Td>player3</Td>
-            <Td isNumeric>3</Td>
-          </Tr>
-          <Tr bg='yellow.400'>
-            <Td>player4</Td>
-            <Td isNumeric>3</Td>
-          </Tr>
-          <Tr>
-            <Td>player5</Td>
-            <Td isNumeric>3</Td>
           </Tr> */}
         </Tbody>
       </Table>
