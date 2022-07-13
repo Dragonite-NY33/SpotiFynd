@@ -89,9 +89,7 @@ function Playgame() {
           </Box>
         </HStack>
       </Flex> */}
-      <Center>
-        <Flipcard />
-      </Center>
+      <Center>{/* <Flipcard /> */}</Center>
     </Box>
   );
 }
