@@ -40,13 +40,13 @@ function Navbar() {
   }
   //Step 2: Upon redirect to main page, take window code
   function getWindowCode(){
-    console.log('hit window code')
+    // console.log('hit window code')
     let code = window.location.href;
     if (code.length > 'http://localhost:3000/'.length){
         
         const urlParams = new URLSearchParams(window.location.search);
         let newCode = urlParams.get('code');
-        console.log('newcode is: ', newCode)
+        // console.log('newcode is: ', newCode)
         code = newCode;
         setWindowCode((windowCode) => windowCode += code)
         fetchAccessToken(code)
@@ -79,14 +79,14 @@ function Navbar() {
       .then(res => res.json())
       .then(data => {
         if (data !== undefined && !data.error){
-          console.log(data)
-          console.log('access token is: ', data.access_token);
-          console.log('refresh token is: ', data.refresh_token);
+          // console.log(data)
+          // console.log('access token is: ', data.access_token);
+          // console.log('refresh token is: ', data.refresh_token);
           //sendToken(data);
           retrieveProfile(data.access_token);
         }
       })
-      .catch(err => console.log('error in fetch: ', err))
+      .catch((err) => {console.log('error in calling auth API: ', err)});
   }
   //Step 5: send token to back end
   function sendToken(data){
@@ -113,7 +113,7 @@ function Navbar() {
     fetch(url, requestOptions)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         /*
         const [isLoggedin, setLogin] = useState(false)
         const [proPicURL, setProfilePic] = useState ('')
@@ -123,7 +123,7 @@ function Navbar() {
        if (data.images) setProfilePic((proPicURL) => proPicURL = data.images[0].url  )
        setLogin((isLoggedin) => isLoggedin = true)
       })
-      .catch(err => 'error in retrieveProfile: ', err);
+      .catch((err) => {console.log('error in retrieveProfile: ', err)});
   }
     
   return (
