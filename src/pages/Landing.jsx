@@ -30,8 +30,15 @@ function Landing() {
           </Button>
         </RouterLink>
       </Flex>
-      <Center mt='100'>Which song is more popular?</Center>
-      <Center>It's a game that obviously doesn't use Spotify</Center>
+      <Center mt='100' fontSize='2xl'>
+        Which song is more popular?
+      </Center>
+      <Center fontSize='2xl'>
+        It's a game that obviously doesn't use Spotify
+      </Center>
+      <Center fontSize='2xl'>
+        <RouterLink to='/gameresults'>Leaderboard</RouterLink>
+      </Center>
     </Box>
   );
 }

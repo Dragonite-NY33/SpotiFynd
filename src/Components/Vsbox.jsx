@@ -9,24 +9,29 @@ import {
   Grid,
 } from '@chakra-ui/react';
 import Musiccard from './Musiccard';
+import { useState, useEffect } from 'react';
 
 function Vsbox(props) {
+  console.log(props.data);
   return (
-    // <HStack mt={'50px'} spacing='24px'>
-    //   <Box>
-    //     <Musiccard title='First Track' desc='WhatEver' />
-    //   </Box>
-    //   {/* <Spacer /> */}
-    //   <Box>
-    //     <Musiccard title='Second Track' desc='WhatEver' />
-    //   </Box>
-    // </HStack>
     <Grid templateColumns='repeat(2,1fr)' gap={100} mt={'50px'}>
       <GridItem borderRadius='lg'>
-        <Musiccard title='Trust' album='https://i.scdn.co/image/ab67616d0000b273bf3e522cd3fed64ae064095f' desc='Brent Faiyaz' preview_url='https://p.scdn.co/mp3-preview/df0bd62bd0c37b37bd3f0656ec1b58a59d039aed?cid=774b29d4f13844c495f206cafdad9c86'/>
+        <Musiccard
+          title={props.data[0].title}
+          album={props.data[0].album}
+          desc={props.data[0].artists[0]}
+          preview_url={props.data[0].previewUrl}
+          popularity={props.data[0].popularity}
+        />
       </GridItem>
       <GridItem borderRadius='lg'>
-        <Musiccard title='Me Porto Bonito' album='https://i.scdn.co/image/ab67616d0000b27349d694203245f241a1bcaa72' desc='Bad Bunny' preview_url='https://p.scdn.co/mp3-preview/8513b15fb5b39966d8eccaa7b8c050c7a570e6e8?cid=774b29d4f13844c495f206cafdad9c86'/>
+        <Musiccard
+          title={props.data[1].title}
+          album={props.data[1].album}
+          desc={props.data[1].artists[0]}
+          preview_url={props.data[1].previewUrl}
+          popularity={props.data[1].popularity}
+        />
       </GridItem>
     </Grid>
   );

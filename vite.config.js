@@ -11,15 +11,15 @@ export default defineConfig({
       plugins: [esbuildCommonjs(['node-fetch'])],
     },
   },
-  // proxy: {
-  //   '/userSongs': 'https://localhost:8000',
-  //   '/playlistSongs': 'https://localhost:8000',
-  //   '/mixedSongs': 'https://localhost:8000'
-  //   '/api': {
-  //     target: 'https://localhost:8000',
-  //     changeOrigin: true,
-  //     secure: false,
-  //     ws: true,
-  //   },
-  // },
+  server: {
+    proxy: {
+      // '/api/*': 'http://localhost:8080',
+      '/api/': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
+    },
+  },
 });

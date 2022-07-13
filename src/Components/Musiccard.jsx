@@ -4,7 +4,7 @@ import { useState } from 'react';
 function Musiccard(props) {
   const [isActive, setIsActive] = useState(true);
 
-  const handleClick = (event) => {
+  const flipHandler = (event) => {
     setIsActive((current) => !current);
   };
 
@@ -81,7 +81,7 @@ function Musiccard(props) {
       borderWidth='.5px'
       borderRadius='lg'
       boxShadow='0px 0px 18px 11px #2EB953'
-      onClick={handleClick}
+      onClick={flipHandler}
       // _hover={{
       //   bg: 'white',
       //   boxShadow: '0px 0px 18px 11px #000000',
@@ -107,7 +107,7 @@ function Musiccard(props) {
           {props.desc}
         </Text>
       </Box>
-      <Box className='card__face card__face--back'>Back</Box>
+      <Box className='card__face card__face--back'>{props.popularity}</Box>
     </Box>
   );
 }
