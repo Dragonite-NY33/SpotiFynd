@@ -11,11 +11,7 @@ spotifyController.getUserSongs = (req, res, next) => {
     headers: {
       'Content-Type': 'application/json',
       Authorization:
-<<<<<<< HEAD
-        'Bearer BQClu_tMKvCzvxDoqHj9Aypky46z5doKwxpnX98fjMBJZAp56jYy50osAyDsGoXtmtOOdFAU_7HAkJR4xqsB3eNk9jHdJ3Nsf_qV1g-C1h-fytHi4FmlqKiUwqKtd-elnfRVNh7Z5uqZAQEF7KBf4ap-heqjiZIS1ezcc3010DHDu7MDVfHOIJfi_w'
-=======
         'Bearer ' + token,
->>>>>>> dev
     },
   })
     .then((data) => data.json())
@@ -52,11 +48,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization:
-<<<<<<< HEAD
-          'Bearer BQClu_tMKvCzvxDoqHj9Aypky46z5doKwxpnX98fjMBJZAp56jYy50osAyDsGoXtmtOOdFAU_7HAkJR4xqsB3eNk9jHdJ3Nsf_qV1g-C1h-fytHi4FmlqKiUwqKtd-elnfRVNh7Z5uqZAQEF7KBf4ap-heqjiZIS1ezcc3010DHDu7MDVfHOIJfi_w'
-=======
           'Bearer ' + token,
->>>>>>> dev
       },
     }
   )
@@ -112,6 +104,6 @@ spotifyController.getMixedSongs = (req, res, next) => {
   }
 };
 // module.exports = spotifyController;
-export default spotifyController;
+export default spotifyxController;
 
 // BQBPePxNy9-qEFeo26OgPjMJbn2Vl4Gw0RqTT7bID8uoF1o_VN7auc3doPTkLl-8-oGwlFmgPhIaPr63QowNE8rQpijepznC0-Ftj9Boucl_y8X1vCH6yR7gsUoYIjRfjB19qJwU5LoJGCz7eEBD_Wx1pumyGYjNhy3Cv5P8dTVWklPyCvnMEnY-ol5ckw
