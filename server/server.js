@@ -19,13 +19,13 @@ const MONGO_URI =
 mongoose.connect(MONGO_URI);
 
 // request to get user's top 50 songs
-app.get('/api/userSongs', spotifyController.getUserSongs, (req, res, next) => {
+app.get('/api/userSongs:token', spotifyController.getUserSongs, (req, res, next) => {
   res.send(res.locals.userSongs);
 });
 
 // endpoint to get top 50 spotify songs
 app.get(
-  '/api/playlistSongs',
+  '/api/playlistSongs:token',
   spotifyController.getPlaylistSongs,
   (req, res, next) => {
     res.send(res.locals.playlistSongs);
@@ -34,7 +34,7 @@ app.get(
 
 // endpoint to get mix of user songs and top 50 spotify songs
 app.get(
-  '/api/mixedSongs',
+  '/api/mixedSongs:token',
   spotifyController.getUserSongs,
   spotifyController.getPlaylistSongs,
   spotifyController.getMixedSongs,
@@ -45,7 +45,6 @@ app.get(
 
 // endpoint to get save userScore
 app.post('/api/storeUserScore', leaderboardController.storeUserScore, (req, res, next) => {
-    console.log('hits store use score endpoint')
     res.send(res.locals.userScore);
 })
 

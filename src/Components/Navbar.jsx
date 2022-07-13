@@ -7,11 +7,10 @@ import {
   SimpleGrid,
   Avatar,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
-
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-function Navbar() {
+function Navbar(props) {
   //Necessary Oauth credentials
   const client_id = '2b88444e819a46e1a31fea18558f43d8';
   const client_secret = '0e0b57569f2c44aba10fbfc5149db042';
@@ -20,10 +19,9 @@ function Navbar() {
   let TOKEN = 'https://accounts.spotify.com/api/token';
 
   const [windowCode, setWindowCode] = useState('');
-  const [isLoggedin, setLogin] = useState(false);
-  const [proPicURL, setProfilePic] = useState('');
   const [name, setName] = useState('');
-
+  const {isLoggedIn, proPicURL, setLogin, setProfilePic} = props;
+  
   useEffect(() => {
     getWindowCode();
   }, []);
@@ -120,7 +118,9 @@ function Navbar() {
         if (data.display_name) setName((name) => (name = data.display_name));
         if (data.images)
           setProfilePic((proPicURL) => (proPicURL = data.images[0].url));
-        setLogin((isLoggedin) => (isLoggedin = true));
+        setLogin((isLoggedIn) => (isLoggedIn = true));
+        localStorage.setItem('token', token);
+        
       })
       .catch((err) => {
         console.log('error in retrieveProfile: ', err);
@@ -129,35 +129,21 @@ function Navbar() {
 
   return (
     <SimpleGrid color='rgb(27,215,96)' bg='rgb(39,42,54)' py='5' columns={3}>
-      {/* <Avatar
-        name='SpotiFynd'
-        // src='https://thumbs.dreamstime.com/b/green-neon-question-mark-black-background-illustration-222851076.jpg'
-        // src='https://t4.ftcdn.net/jpg/05/10/76/85/360_F_510768565_JYzrONykACo1MLytnxmp5XfM96TheaIV.jpg'
-        ml='10'
-      /> */}
-      <Box></Box>
+      <Flex justify='left' ml='10'>
+      <Button color='rgb(39,42,54)' bg='rgb(27,215,96)'>
+            <RouterLink to='/gameresults'>Leaderboard</RouterLink>
+          </Button>
+      </Flex>
+
       <Flex justify='center'>
         <RouterLink to='/'>
           <Heading>SpotiFynd</Heading>
         </RouterLink>
       </Flex>
       <Flex justify='right' mr='10'>
-        {isLoggedin ? (
+        {isLoggedIn ? (
           <Avatar name='Player' src={proPicURL} />
         ) : (
-          // <div
-          //   style={{
-          //     display: 'flex',
-          //     flexDirection: 'column',
-          //     alignItems: 'center',
-          //   }}
-          // >
-          //   <img
-          //     src={proPicURL}
-          //     style={{ height: '60px', width: '60px', borderRadius: '50%' }}
-          //   />
-          //   <p style={{ marginLeft: '5px' }}>Hello {name}</p>
-          // </div>
           <Button
             color='rgb(39,42,54)'
             bg='rgb(27,215,96)'
