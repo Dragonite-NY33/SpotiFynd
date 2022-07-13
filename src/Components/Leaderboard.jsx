@@ -11,9 +11,21 @@ import {
   Highlight,
 } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 function LeaderBoard(props) {
   const location = useLocation();
+  const [playerList, setPlayerList] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/leaderboard')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('This is leaderboard data: ', data);
+        setPlayerList(data);
+      })
+      .catch((err) => console.log('Error fetching leaderboard data'));
+  }, []);
 
   const playerss = [
     { player: 'player1', score: 35 },
@@ -45,7 +57,7 @@ function LeaderBoard(props) {
     }
   }
   players.sort((a, b) => a.score - b.score);
-  console.log(players);
+  // console.log(players);
 
   return (
     <TableContainer
