@@ -1,15 +1,17 @@
 import fetch from 'node-fetch';
-
+let token = '';
 const spotifyController = {};
 
 spotifyController.getUserSongs = (req, res, next) => {
   console.log('Received getUserSongs request');
+  token = req.params.token.slice(6);
+  console.log('sliced token: ', token);
   const userSongs = [];
   fetch(`https://api.spotify.com/v1/me/top/tracks?limit=50`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization:
-        'Bearer BQDjqkEw7OfxH_7gKgPLQ8l2As3jNfIFkzM04vBU8NYVkgZGdcbWaP7vc9V9YSv8DCZEzDwstIY5cSqdq9fIV_uZ3eSNHusm2Wkm52rCbZSZUGRquAkguj_7oDJEwLSKVFA5KCMAzOD6lSXiG6wouKmcSgkOChsEUEllE9HjhxrCgl0NhlDAbf32iQ',
+        'Bearer ' + token,
     },
   })
     .then((data) => data.json())
@@ -46,7 +48,7 @@ spotifyController.getPlaylistSongs = (req, res, next) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization:
-          'Bearer BQDjqkEw7OfxH_7gKgPLQ8l2As3jNfIFkzM04vBU8NYVkgZGdcbWaP7vc9V9YSv8DCZEzDwstIY5cSqdq9fIV_uZ3eSNHusm2Wkm52rCbZSZUGRquAkguj_7oDJEwLSKVFA5KCMAzOD6lSXiG6wouKmcSgkOChsEUEllE9HjhxrCgl0NhlDAbf32iQ',
+          'Bearer ' + token,
       },
     }
   )
