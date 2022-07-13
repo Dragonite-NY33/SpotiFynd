@@ -43,8 +43,20 @@ app.get(
   }
 );
 
-// request to unknown route
-app.use((req, res) => res.statusMessage(404).send('unknown route'));
+// endpoint to get save userScore
+app.post('/api/storeUserScore', leaderboardController.storeUserScore, (req, res, next) => {
+    console.log('hits store use score endpoint')
+    res.send(res.locals.userScore);
+})
+
+// endpoint to get top 10 on the leaderboard
+app.get('/api/leaderboard', leaderboardController.getTopTenScores, (req, res, next) => {
+    res.send(res.locals.topTenScores);
+})
+
+
+// request to unknown route 
+app.use((req,res) => res.statusMessage(404).send('unknown route'));
 
 // global error handler
 app.use((err, req, res, next) => {
