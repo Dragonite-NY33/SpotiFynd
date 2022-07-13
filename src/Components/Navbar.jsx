@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Avatar,
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -19,21 +20,15 @@ function Navbar() {
       /> */}
       <Box></Box>
       <Flex justify='center'>
-        <Heading>SpotiFynd</Heading>
+        <RouterLink to='/'>
+          <Heading>SpotiFynd</Heading>
+        </RouterLink>
       </Flex>
       <Flex justify='right' mr='10'>
         <Button color='rgb(39,42,54)' bg='rgb(27,215,96)'>
           Login
         </Button>
       </Flex>
-      {/* <Center>
-        <Flex>
-          <Heading>SpotiFynd</Heading>
-        </Flex>
-      </Center>
-      <Button px='12' py='10'>
-        Login
-      </Button> */}
     </SimpleGrid>
   );
 }

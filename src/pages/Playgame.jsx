@@ -14,10 +14,33 @@ import {
 import Vsbox from '../Components/Vsbox';
 import Navbar from '../Components/Navbar';
 import Flipcard from '../Components/Flipcard';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Playgame() {
   const [score, setScore] = useState(0);
+
+  const [songList, setSongList] = useState([]);
+  const [songOne, setSongOne] = useState({});
+  const [songTwo, setSongTwo] = useState({});
+
+  useEffect(() => {
+    fetch('http://localhost:8080/userSongs')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setSongList(data);
+      });
+  }, []);
+
+  const arrHelperFunc = () => {
+    let tempList = [...songList];
+    tempList.shift();
+    console.log(tempList);
+    setSongList(tempList);
+  };
+
+  console.log(songList[0]);
+  console.log(songList[1]);
 
   return (
     <Box bg='#222326' minH='100vh' minW='100vw'>
@@ -30,7 +53,7 @@ function Playgame() {
       </Flex>
 
       <VStack align='center' w={'100%'}>
-        <Vsbox />
+        {songList[0] ? <Vsbox data={[songList[0], songList[1]]} /> : 'Loading'}
       </VStack>
 
       <Heading mt={50} textAlign={'center'} color='#2EB953'>
@@ -51,6 +74,7 @@ function Playgame() {
           color='black'
           p={4}
           fontSize='4xl'
+          onClick={arrHelperFunc}
         >
           Higher
         </Box>
@@ -61,6 +85,7 @@ function Playgame() {
           color='black'
           p={4}
           fontSize='4xl'
+          onClick={arrHelperFunc}
         >
           Lower
         </Box>
