@@ -34,11 +34,18 @@ function Playgame() {
 
   const navigate = useNavigate();
 
+  const gameMode = useLocation().state.gameMode;
+  console.log('Is logged in persisting?', useLocation().state.isLoggedIn);
+  const isLoggedIn = useLocation().state.isLoggedIn;
+  console.log('Is proPicURL persisting?', useLocation().state.proPicURL);
+  const proPicURL = useLocation().state.proPicURL;
+
+  let token = localStorage.getItem('token');
   useEffect(() => {
-    fetch('/api/userSongs')
+    fetch(`api/${gameMode}` + new URLSearchParams({ token: token }))
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setSongList(data);
       });
   }, []);
@@ -100,12 +107,12 @@ function Playgame() {
     }
   };
 
-  console.log(songList[0]);
-  console.log(songList[1]);
+  // console.log(songList[0]);
+  // console.log(songList[1]);
 
   return (
     <Box bg='#222326' minH='100vh' minW='100vw'>
-      <Navbar></Navbar>
+      <Navbar isLoggedIn={isLoggedIn} proPicURL={proPicURL}></Navbar>
       <Flex direction={'column'} alignItems='center'>
         {/* <Heading color='#2EB953'>SpotiFynd</Heading> */}
         <Heading mt='25px' color='#2EB953'>
@@ -118,11 +125,11 @@ function Playgame() {
       </VStack>
 
       <Heading mt={50} textAlign={'center'} color='#2EB953'>
-        Song B's plays are:
+        {songList[1] ? <em>{songList[1].title}</em> : 'Loading'} is:
       </Heading>
 
       <Stack
-        spacing='400px'
+        spacing='100px'
         justify={'center'}
         direction={['row']}
         m={25}
@@ -137,7 +144,7 @@ function Playgame() {
           fontSize='4xl'
           onClick={arrHelperFunc}
         >
-          Higher
+          More popular
         </Box>
         <Box
           as='button'
@@ -148,33 +155,9 @@ function Playgame() {
           fontSize='4xl'
           onClick={arrHelperFunc}
         >
-          Lower
+          Less popular
         </Box>
       </Stack>
-      {/* <Flex direction={'column'} alignItems='center' mt={50}>
-        <HStack spacing='24px'>
-          <Box
-            as='button'
-            borderRadius='lg'
-            bg='#2EB953'
-            color='black'
-            p={4}
-            fontSize='6xl'
-          >
-            Higher
-          </Box>
-          <Box
-            as='button'
-            borderRadius='lg'
-            bg='#2EB953'
-            color='black'
-            p={4}
-            fontSize='6xl'
-          >
-            Lower
-          </Box>
-        </HStack>
-      </Flex> */}
       <Center>{/* <Flipcard /> */}</Center>
     </Box>
   );
