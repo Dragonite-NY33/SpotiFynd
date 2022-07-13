@@ -15,25 +15,34 @@ import Vsbox from '../Components/Vsbox';
 import Navbar from '../Components/Navbar';
 import Flipcard from '../Components/Flipcard';
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import {
+  useLocation,
+  Navigate,
+  Routes,
+  Route,
+  useNavigate,
+} from 'react-router-dom';
+// import { Redirect } from 'react-router';
 
 function Playgame() {
-
   const [score, setScore] = useState(0);
 
   const [songList, setSongList] = useState([]);
+
   // const [songOne, setSongOne] = useState({});
   // const [songTwo, setSongTwo] = useState({});
 
-  const gameMode = useLocation().state.gameMode
-  console.log('Is logged in persisting?', useLocation().state.isLoggedIn)
+  const navigate = useNavigate();
+
+  const gameMode = useLocation().state.gameMode;
+  console.log('Is logged in persisting?', useLocation().state.isLoggedIn);
   const isLoggedIn = useLocation().state.isLoggedIn;
-  console.log('Is proPicURL persisting?', useLocation().state.proPicURL)
-  const proPicURL = useLocation().state.proPicURL
+  console.log('Is proPicURL persisting?', useLocation().state.proPicURL);
+  const proPicURL = useLocation().state.proPicURL;
 
   let token = localStorage.getItem('token');
   useEffect(() => {
-    fetch(`api/${gameMode}` + new URLSearchParams({'token':token}))
+    fetch(`api/${gameMode}` + new URLSearchParams({ token: token }))
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -42,13 +51,21 @@ function Playgame() {
   }, []);
 
   const arrHelperFunc = (event) => {
-    console.log(event.target.innerText);
     if (
       (event.target.innerText === 'Higher') &
       (songList[0].popularity < songList[1].popularity)
     ) {
       let tempScore = score + 1;
       setScore(tempScore);
+    } else if (
+      (event.target.innerText === 'Higher') &
+      (songList[0].popularity > songList[1].popularity)
+    ) {
+      alert('Game OveR');
+      let userInit = prompt(
+        `You have a score of ${score}. Please enter initials:`
+      );
+      navigate('/gameresults', { state: { user: userInit } });
     }
 
     if (
@@ -57,20 +74,36 @@ function Playgame() {
     ) {
       let tempScore = score + 1;
       setScore(tempScore);
+    } else if (
+      (event.target.innerText === 'Lower') &
+      (songList[0].popularity < songList[1].popularity)
+    ) {
+      alert('Game OveR');
+      let userInit = prompt(
+        `You have a score of ${score}. Please enter initials:`
+      );
+      navigate('/gameresults', { state: { user: userInit } });
     }
 
     let tempList = [...songList];
     tempList.shift();
     console.log(tempList);
 
-    if (tempList.length > 44) {
+    if (tempList.length > 1) {
       setSongList(tempList);
     } else {
+      // document.body.innerHTML =
+      //   '<h1>Game Over</h1><input id="value"></input><button id="submit">Submit</button>';
+      // const value = document.getElementById('value');
+      // const submit = document.getElementById('submit');
+      // submit.onclick = () => {
+      //   navigate('/gameresults', { state: { user: value } });
+      // };
       alert('Game OveR');
       let userInit = prompt(
         `You have a score of ${score}. Please enter initials:`
       );
-      window.location.assign('http://localhost:3000/gameresults');
+      navigate('/gameresults', { state: { user: userInit } });
     }
   };
 
