@@ -6,23 +6,6 @@ const client_secret = '0e0b57569f2c44aba10fbfc5149db042';
 const redirect_uri = 'http://localhost:3000/auth/spotify/callback';
 import cors from 'cors';
 import spotifyController from './controllers/spotifyController.js';
-// import passport from 'passport';
-// import passportConfig from './config/passport';
-// import SpotifyStrategy from 'passport-spotify';
-
-// passportConfig(passport);
-
-// passport.use(
-//     new SpotifyStrategy(
-//         {
-//             clientID: client_id,
-//             client_secret: client_secret,
-//             callbackURL: redirect_uri,
-//         },
-
-//     );
-// );
-
 
 //middleware
 app.use(express.json());
@@ -33,26 +16,10 @@ const MONGO_URI = 'mongodb+srv://spotiFynd:cswcS16Z8664lL3l@cluster0.jav5ed0.mon
 
 mongoose.connect(MONGO_URI);
 
-//login functionality
-/*
-scope permissions:
-'user-top-read' -- gets users top artists and tracks
-*/
-// app.get('/auth/spotify', Passport.authenticate('spotify'), {
-//     scope: ['user-top-read'],
-//     showDialog: true
-// });
-
-// app.get('/auth/spotify/callback', Passport.authenticate('spotify'), (req, res) {
-//     res.redirect('/')
-// });
-
-
 // request to get user's top 50 songs
 app.get('/userSongs', spotifyController.getUserSongs,(req, res, next) => {
     res.send(res.locals.userSongs)
 })
-
 
 // endpoint to get top 50 spotify songs
 app.get('/playlistSongs', spotifyController.getPlaylistSongs,(req, res, next) => {
