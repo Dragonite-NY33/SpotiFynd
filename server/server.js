@@ -6,6 +6,7 @@ const client_secret = '0e0b57569f2c44aba10fbfc5149db042';
 const redirect_uri = 'http://localhost:3000/auth/spotify/callback';
 import cors from 'cors';
 import spotifyController from './controllers/spotifyController.js';
+import leaderboardController from './controllers/leaderboardController.js'
 
 //middleware
 app.use(express.json());
@@ -18,17 +19,27 @@ mongoose.connect(MONGO_URI);
 
 // request to get user's top 50 songs
 app.get('/userSongs', spotifyController.getUserSongs,(req, res, next) => {
-    res.send(res.locals.userSongs)
+    res.send(res.locals.userSongs);
 })
 
 // endpoint to get top 50 spotify songs
 app.get('/playlistSongs', spotifyController.getPlaylistSongs,(req, res, next) => {
-    res.send(res.locals.playlistSongs)
+    res.send(res.locals.playlistSongs);
 })
 
 // endpoint to get mix of user songs and top 50 spotify songs
 app.get('/mixedSongs', spotifyController.getUserSongs, spotifyController.getPlaylistSongs, spotifyController.getMixedSongs, (req, res, next) => {
     res.send(res.locals.mixedSongs);
+})
+
+// endpoint to get save userScore
+app.post('/saveUserScore', leaderboardController.storeUserScore, (req, res, next) => {
+    res.send(res.locals.userScore);
+})
+
+// endpoint to get top 10 on the leaderboard
+app.get('/leaderboard', leaderboardController.getTopTenScores, (req, res, next) => {
+    res.send(res.locals.topTenScores);
 })
 
 // request to unknown route 
