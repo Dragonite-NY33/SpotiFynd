@@ -10,8 +10,11 @@ import {
   TableContainer,
   Highlight,
 } from '@chakra-ui/react';
+import { useLocation } from 'react-router-dom';
 
 function LeaderBoard(props) {
+  const location = useLocation();
+
   const playerss = [
     { player: 'player1', score: 35 },
     { player: 'player2', score: 29 },
@@ -19,12 +22,14 @@ function LeaderBoard(props) {
     { player: 'player4', score: 6 },
     { player: 'player5', score: 18 },
     { player: 'player6', score: 23 },
+    // { player: location.state.user, score: 43 },
   ];
   const players = [];
   for (let i = 0; i < playerss.length; i++) {
     if (playerss[i].player !== 'player2') {
       players.push(
         <Tr>
+          <Td>{i + 1}</Td>
           <Td>{playerss[i].player}</Td>
           <Td isNumeric>{playerss[i].score}</Td>
         </Tr>
@@ -32,6 +37,7 @@ function LeaderBoard(props) {
     } else {
       players.push(
         <Tr bg='yellow.200'>
+          <Td>{i + 1}</Td>
           <Td>{playerss[i].player}</Td>
           <Td isNumeric>{playerss[i].score}</Td>
         </Tr>
@@ -39,6 +45,7 @@ function LeaderBoard(props) {
     }
   }
   players.sort((a, b) => a.score - b.score);
+  console.log(players);
 
   return (
     <TableContainer
@@ -52,6 +59,9 @@ function LeaderBoard(props) {
       <Table variant='striped' colorScheme='lightgrey'>
         <Thead>
           <Tr>
+            <Th isNumeric fontSize='18'>
+              Rank
+            </Th>
             <Th fontSize='18'>Player</Th>
             <Th isNumeric fontSize='18'>
               Score
