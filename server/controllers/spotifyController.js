@@ -104,6 +104,6 @@ spotifyController.getMixedSongs = (req, res, next) => {
   }
 };
 // module.exports = spotifyController;
-export default spotifyxController;
+export default spotifyController;
 
 // BQBPePxNy9-qEFeo26OgPjMJbn2Vl4Gw0RqTT7bID8uoF1o_VN7auc3doPTkLl-8-oGwlFmgPhIaPr63QowNE8rQpijepznC0-Ftj9Boucl_y8X1vCH6yR7gsUoYIjRfjB19qJwU5LoJGCz7eEBD_Wx1pumyGYjNhy3Cv5P8dTVWklPyCvnMEnY-ol5ckw
