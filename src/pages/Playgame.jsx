@@ -35,9 +35,10 @@ function Playgame() {
   const navigate = useNavigate();
 
   const gameMode = useLocation().state.gameMode;
-  console.log('Is logged in persisting?', useLocation().state.isLoggedIn);
+  console.log('game mode: ', gameMode);
+  // console.log('Is logged in persisting?', useLocation().state.isLoggedIn);
   const isLoggedIn = useLocation().state.isLoggedIn;
-  console.log('Is proPicURL persisting?', useLocation().state.proPicURL);
+  // console.log('Is proPicURL persisting?', useLocation().state.proPicURL);
   const proPicURL = useLocation().state.proPicURL;
 
   let token = localStorage.getItem('token');
@@ -51,14 +52,17 @@ function Playgame() {
   }, []);
 
   const arrHelperFunc = (event) => {
+    console.log('songList is: ', songList)
+    console.log('event target: ', event.target.innerText)
     if (
-      (event.target.innerText === 'Higher') &
+      (event.target.innerText === 'More popular') &
       (songList[0].popularity < songList[1].popularity)
     ) {
       let tempScore = score + 1;
       setScore(tempScore);
+      console.log('temp score is: ', tempScore);
     } else if (
-      (event.target.innerText === 'Higher') &
+      (event.target.innerText === 'More popular') &
       (songList[0].popularity > songList[1].popularity)
     ) {
       alert('Game OveR');
@@ -69,13 +73,14 @@ function Playgame() {
     }
 
     if (
-      (event.target.innerText === 'Lower') &
+      (event.target.innerText === 'Less popular') &
       (songList[0].popularity > songList[1].popularity)
     ) {
       let tempScore = score + 1;
       setScore(tempScore);
+      console.log('temp score is: ', tempScore);
     } else if (
-      (event.target.innerText === 'Lower') &
+      (event.target.innerText === 'Less popular') &
       (songList[0].popularity < songList[1].popularity)
     ) {
       alert('Game OveR');

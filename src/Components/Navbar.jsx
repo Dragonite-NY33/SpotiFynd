@@ -65,7 +65,7 @@ function Navbar(props) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: 'Basic ' + btoa(client_id + ':' + client_secret),
+        Authorization: 'Basic ' +  btoa(client_id + ':' + client_secret),
       },
       body: body,
     };
